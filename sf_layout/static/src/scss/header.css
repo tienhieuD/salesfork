@@ -1,0 +1,74 @@
+.o_main_navbar {
+  height: 92px;
+  border-bottom-color: #FFF;
+  background-color: #FFF;
+  color: #333;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.o_main_navbar .show .dropdown-toggle {
+  background-color: rgba(0, 112, 210, 0.1);
+}
+
+.o_main_navbar .sf_top_nav {
+  height: 46px;
+}
+
+.o_main_navbar .sf_top_nav .logo {
+  max-height: 46px;
+}
+
+.o_main_navbar .o_menu_apps > li > a {
+  padding: 0 18px;
+}
+
+.o_main_navbar .o_menu_sections .dropdown-menu.show {
+  overflow: unset;
+}
+
+.o_main_navbar .o_menu_sections .f_dropdown:hover > .f_dropdown_menu {
+  display: block;
+  opacity: 1;
+}
+
+.o_main_navbar .o_menu_sections .f_dropdown > .f_menu_open_dropdown {
+  padding: 4px 20px;
+}
+
+.o_main_navbar .o_menu_sections .f_dropdown > .f_menu_open_dropdown::after {
+  content: "\f105";
+  font: normal normal normal 14px/1 FontAwesome;
+  position: absolute;
+  right: 8px;
+  top: 6px;
+}
+
+.o_main_navbar .o_menu_sections .f_dropdown .f_dropdown_menu {
+  border-radius: 0;
+  left: 99%;
+  top: 0;
+  margin-top: 2px;
+  opacity: 0;
+  margin-left: 2px;
+  margin-top: -1px !important;
+}
+
+.o_main_navbar > ul > li > a,
+.o_main_navbar > ul > li > label {
+  color: #333;
+}
+
+.o_main_navbar > ul > li > a:hover, .o_main_navbar > ul > li > a:active, .o_main_navbar > ul > li > a:focus,
+.o_main_navbar > ul > li > label:hover,
+.o_main_navbar > ul > li > label:active,
+.o_main_navbar > ul > li > label:focus {
+  background-color: rgba(0, 112, 210, 0.1);
+  border-bottom: 2px solid;
+}
+
+.o_main_navbar > ul > li > a .sf_menu,
+.o_main_navbar > ul > li > label .sf_menu {
+  font-size: 1.6rem;
+  line-height: 2.6;
+}

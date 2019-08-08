@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_nis_work_mark_line,access_nis_work_mark_line,model_nis_work_mark_line,base.group_user,1,1,1,1
+access_nis_workslip,access_nis_workslip,model_nis_workslip,base.group_user,1,1,1,1
+access_nis_workslip_line,access_nis_workslip_line,model_nis_workslip_line,base.group_user,1,1,1,1
+access_nis_work_mark,access_nis_work_mark,model_nis_work_mark,base.group_user,1,1,1,1
+access_nis_work_type,access_nis_work_type,model_nis_work_type,base.group_user,1,1,1,1
+access_nis_workslip_run,access_nis_workslip_run,model_nis_workslip_run,base.group_user,1,1,1,1

@@ -1,0 +1,100 @@
+$navbar-bg: #FFF;
+$navbar-border: #FFF;
+$navbar-height: 92px;
+$navbar-color: #333;
+$navbar-bg-hover: rgba(0, 112, 210, 0.1);
+
+$shadow-light: 0 3px 6px rgba(0, 0, 0, 0.1),
+0 3px 6px rgba(0, 0, 0, 0.1);
+
+.o_main_navbar {
+    height: $navbar-height;
+    border-bottom-color: $navbar-border;
+    background-color: $navbar-bg;
+    color: $navbar-color;
+    box-shadow: $shadow-light;
+    z-index: 1;
+
+    .show {
+        .dropdown-toggle {
+            background-color: $navbar-bg-hover;
+        }
+    }
+
+    .sf_top_nav {
+        height: $navbar-height / 2;
+
+        .logo {
+            max-height: $navbar-height / 2;
+        }
+    }
+
+    .o_menu_apps {
+        >li {
+            >a {
+                padding: 0 18px;
+            }
+        }
+    }
+
+    // Menu dropdown multi level styles
+    .o_menu_sections {
+        .dropdown-menu {
+            &.show {
+                overflow: unset;
+            }
+        }
+
+        .f_dropdown {
+            &:hover {
+                >.f_dropdown_menu {
+                    display: block;
+                    opacity: 1;
+                }
+            }
+
+            >.f_menu_open_dropdown {
+                padding: 4px 20px;
+                &::after {
+                    content: "\f105";
+                    font: normal normal normal 14px/1 FontAwesome;
+                    position: absolute;
+                    right: 8px;
+                    top: 6px;
+                }
+            }
+
+            .f_dropdown_menu {
+                border-radius: 0;
+                left: 99%;
+                top: 0;
+                margin-top: 2px;
+                opacity: 0;
+                margin-left: 2px;
+                margin-top: -1px !important;
+            }
+        }
+    }  // End - Menu dropdown multi level styles
+
+    &>ul {
+        &>li {
+
+            &>a,
+            &>label {
+                color: $navbar-color;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: $navbar-bg-hover;
+                    border-bottom: 2px solid;
+                }
+
+                .sf_menu {
+                    font-size: 1.6rem;
+                    line-height: 2.6;
+                }
+            }
+        }
+    }
+}

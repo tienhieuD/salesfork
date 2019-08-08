@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap&subset=vietnamese");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap&subset=vietnamese");
+html body.o_web_client {
+  font-family: "Open Sans", "Roboto", "Noto", "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
+  font-size: 1.1rem;
+}
+
+html body.o_web_client > .o_main {
+  background-image: url("/sf_layout/static/src/img/bg.png");
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-color: #b0c4df;
+}
+
+html body.o_web_client > .o_main .o_main_content {
+  margin: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+html body.o_web_client > .o_main .o_main_content .o_control_panel {
+  border-radius: 6px 6px 0 0;
+  background-color: #f3f2f2;
+  background-image: url("/sf_layout/static/src/img/cp-bg.png");
+  background-size: 120px;
+  border-bottom-color: #ddd;
+}
+
+html body.o_web_client > .o_main .o_main_content .o_control_panel .breadcrumb {
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+html body.o_web_client > .o_main .o_main_content .o_control_panel .o_searchview {
+  border-radius: 0;
+}
+
+html body.o_web_client > .o_main .o_main_content .o_control_panel .btn-group > .btn {
+  border-radius: 0;
+  color: #666;
+  text-transform: uppercase;
+}
+
+html body.o_web_client > .o_main .o_main_content .o_content {
+  border-radius: 6px;
+}
+
+.o_form_view .o_field_widget .o_list_view {
+  border: 1px solid #ddd;
+}
+
+.o_list_view thead {
+  background-color: #fafaf9;
+  text-transform: uppercase;
+}
+
+.o_list_view thead tr th {
+  border-left: unset;
+  border-bottom: unset;
+  padding: 0.5rem;
+  border-top-color: transparent;
+}
+
+.o_list_view thead tr th.o_list_record_selector {
+  width: 46px;
+  text-align: center;
+}
+
+.o_list_view tbody tr:nth-of-type(2n+1) {
+  background-color: unset;
+}
+
+.o_list_view tbody tr.o_data_row:hover {
+  background-color: #FFF;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.o_list_view tbody tr.o_group_header {
+  background-image: linear-gradient(to bottom, #eee, #eee);
+}
+
+.o_list_view tbody tr td {
+  padding: 0.5rem;
+}
+
+.o_list_view tbody tr td.o_list_record_selector {
+  text-align: center;
+}
+
+.o_form_view .nav-tabs .nav-link:hover {
+  border-color: transparent;
+}
+
+.o_form_view .nav-tabs .nav-link.active {
+  border: unset;
+  border-bottom: 3px solid #30528a;
+  font-weight: bold;
+  color: #30528a;
+}
