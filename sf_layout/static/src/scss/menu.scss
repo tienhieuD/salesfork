@@ -1,0 +1,23 @@
+.o_menu_apps {
+  .search-container {
+    visibility: hidden;
+  }
+
+  .dropdown-menu.show {
+    background-image: url("/sf_layout/static/src/img/bg.png");
+    background-size: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: $main-bg;
+    .dropdown-item {
+      padding: 20px;
+    }
+
+    .dropdown-item.active,
+    .dropdown-item:active,
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      background-color: rgba(222, 226, 230, 0.5);
+    }
+  }
+}

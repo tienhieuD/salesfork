@@ -19,6 +19,7 @@
                 <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/font.scss"/>
                 <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/common.scss"/>
                 <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/header.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/menu.scss"/>
                 <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/main.scss"/>
                 <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/list.scss"/>
                 <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/form.scss"/>

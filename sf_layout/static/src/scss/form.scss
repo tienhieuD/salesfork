@@ -1,6 +1,4 @@
-// FORM VIEW
 .o_form_view {
-
   // notebook
   .nav-tabs .nav-link {
     &:hover {
@@ -14,4 +12,113 @@
       color: #30528a;
     }
   }
+
+  // oe_chatter
+  .o_chatter.o_chatter_composer_active .o_chatter_topbar > .btn.o_active {
+    color: #30528a;
+    background-color: transparent;
+    border: unset;
+    border-bottom: 3px solid #30528a;
+    font-weight: bold;
+  }
+
+  .o_thread_composer {
+    background: white;
+  }
+
+  .o_mail_thread .o_thread_message.o_mail_not_discussion {
+    background: transparent;
+    border-bottom: unset;
+  }
 }
+
+// layout
+.o_form_view {
+  .o_form_sheet_bg {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    flex: 1 0 auto;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  & > .oe_chatter {
+    -webkit-box-flex: 0;
+    -webkit-flex: 1000 0 auto;
+    flex: 1000 0 auto;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 8px 16px;
+    min-width: unset;
+  }
+}
+
+@media (min-width: 576px) {
+  .o_form_view > .oe_chatter {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .o_form_view {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    min-height: 100%;
+
+    & > .oe_chatter {
+      max-width: 720px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .o_form_view > .oe_chatter {
+    max-width: 960px;
+  }
+  .o_attachment {
+    //width: -webkit-fill-available;
+    width: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .o_form_view > .oe_chatter {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1534px) {
+  .o_form_view {
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    height: 100%;
+
+    & > .o_form_sheet_bg {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+      flex: 1 1 auto;
+      width: 1022px;
+      //padding: 0 16px;
+      overflow: auto;
+      border-bottom: none;
+    }
+
+    .oe_chatter {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+      flex: 1 1 auto;
+      width: 530px;
+      padding: 0;
+      overflow: auto;
+      border-left: 1px solid #dee2e6;
+      background-color: white;
+    }
+  }
+}
+
+// end - layout
+

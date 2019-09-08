@@ -34,6 +34,13 @@
   background: $o-community-color;
 }
 
+.btn i.fa {
+  margin-right: 4px;
+}
+//.btn-group > .btn:active,
+//.btn-group > .btn.active {
+//  z-index: unset;
+//}
 html body.o_web_client > .o_main .o_main_content .o_control_panel .btn-group > .btn.btn-primary {
   color: white;
 }

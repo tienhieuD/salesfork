@@ -4,7 +4,7 @@
   background-color: $navbar-bg;
   color: $navbar-color;
   box-shadow: $shadow-light;
-  z-index: 1;
+  z-index: 1000;
 
   .show {
     .dropdown-toggle {
