@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
     <header t-extend="Menu">
-        <t t-jquery=".o_main_navbar" t-operation="prepend">
-            <div class="sf_top_nav">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <img class="logo" src="/logo"/>
-                        <b>NISSHO ELECTRONIC VIETNAM</b>
-                    </div>
-                    <div class="col-sm-6 text-center">
-                        <img src="https://i.imgur.com/WkJtsmf.png" style="margin-top: 8px;"/>
-                    </div>
-                    <div class="col-sm-3">
-                    </div>
-                </div>
-            </div>
-        </t>
+<!--        <t t-jquery=".o_main_navbar" t-operation="prepend">-->
+<!--            <div class="sf_top_nav">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-sm-3">-->
+<!--                        <img class="sf_logo" src="/logo"/>-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-6 text-center">-->
+<!--&lt;!&ndash;                        <img src="https://i.imgur.com/WkJtsmf.png" style="margin-top: 8px;"/>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-3">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </t>-->
 
         <t t-jquery=".o_menu_brand" t-operation="attributes">
             <attribute name="class">o_menu_brand o_hidden</attribute>
@@ -54,11 +53,11 @@
         </t>
         <t t-else="">
             <!--Sửa và thay thế từ đây-->
-            <div class="f_dropdown">
-                <a href="#" class="dropdown-item f_menu_open_dropdown" t-att-data-menu-xmlid="menu.xmlid" data-toggle="dropdown" data-display="static" role="button" type="button" aria-expanded="false">
+            <div class="sf_dropdown">
+                <a href="#" class="dropdown-item sf_menu_open_dropdown" t-att-data-menu-xmlid="menu.xmlid" data-toggle="dropdown" data-display="static" role="button" type="button" aria-expanded="false">
                     <span><t t-esc="menu.name"/></span>
                 </a>
-                <div class="dropdown-menu f_dropdown_menu" role="menu">
+                <div class="dropdown-menu sf_dropdown_menu" role="menu">
                     <t t-foreach="menu.children" t-as="menu">
                         <t t-call="Menu.link">
                             <t t-set="depth" t-value="1"/>

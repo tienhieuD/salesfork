@@ -1,0 +1,53 @@
+// LIST VIEW
+.o_form_view .o_field_widget .o_list_view {
+  border: 1px solid #ddd;
+}
+
+.o_list_view {
+  thead {
+    background-color: #fafaf9;
+    text-transform: uppercase;
+
+    tr {
+      th {
+        border-left: unset;
+        border-bottom: unset;
+        padding: 1rem $table-cell-padding;
+        border-top-color: transparent;
+
+        &.o_list_record_selector {
+          width: 46px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-of-type(2n+1) {
+        background-color: unset;
+      }
+
+      &.o_data_row:hover {
+        background-color: #FFF;
+        box-shadow: $shadow-light;
+      }
+
+      &.o_group_header {
+        background-image: linear-gradient(to bottom, #eee, #eee);
+      }
+
+      td {
+        padding: $table-cell-padding;
+
+        &.o_list_record_selector {
+          text-align: center;
+        }
+      }
+    }
+
+  }
+}
+
+// END - LIST VIEW

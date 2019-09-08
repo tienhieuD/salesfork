@@ -1,0 +1,17 @@
+// FORM VIEW
+.o_form_view {
+
+  // notebook
+  .nav-tabs .nav-link {
+    &:hover {
+      border-color: transparent;
+    }
+
+    &.active {
+      border: unset;
+      border-bottom: 3px solid #30528a;
+      font-weight: bold;
+      color: #30528a;
+    }
+  }
+}

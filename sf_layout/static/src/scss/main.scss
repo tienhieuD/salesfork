@@ -1,141 +1,50 @@
-// header
-$navbar-bg: #FFF;
-$navbar-border: #FFF;
-$navbar-height: 92px;
-$navbar-color: #333;
-$navbar-bg-hover: rgba(0, 112, 210, 0.1);
-
-$shadow-light: 0 3px 6px rgba(0, 0, 0, 0.1),
-0 3px 6px rgba(0, 0, 0, 0.1);
-
-// main
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap&subset=vietnamese');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap&subset=vietnamese');
-$main-radius: 6px;
-$main-bg: #b0c4df;
-$content-bg: #fafafa;
-$main-font:"Open Sans", 'Roboto', "Noto", "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
-$main-fontsize: 1.1rem;
-
 html {
+  body.o_web_client {
+    font-family: $main-font;
+    font-size: $main-fontsize;
 
-    body.o_web_client {
-        font-family: $main-font;
-        font-size: $main-fontsize;
+    & > .o_main {
+      background-image: url('/sf_layout/static/src/img/bg.png');
+      background-size: 100%;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-color: $main-bg;
 
-        &>.o_main {
-            background-image: url('/sf_layout/static/src/img/bg.png');
-            background-size: contain;
-            background-position: top center;
-            background-repeat: no-repeat;
-            background-color: $main-bg;
+      .o_main_content {
+        margin: 12px;
+        box-shadow: $shadow-light;
+        border-radius: $main-radius;
+        background-color: $content-bg;
 
-            .o_main_content {
-                margin: 12px;
-                box-shadow: $shadow-light;
-                border-radius: $main-radius;
-                background-color: $content-bg;
+        .o_control_panel {
+          border-radius: $main-radius $main-radius 0 0;
+          background-color: #f3f2f2;
+          background-image: url('/sf_layout/static/src/img/cp-bg.png');
+          background-size: 120px;
+          border-bottom-color: #ddd;
 
-                .o_control_panel {
-                    border-radius: $main-radius $main-radius 0 0;
-                    background-color: #f3f2f2;
-                    background-image: url('/sf_layout/static/src/img/cp-bg.png');
-                    background-size: 120px;
-                    border-bottom-color: #ddd;
-                    .breadcrumb {
-                        background-color: transparent;
-                        font-weight: 600;
-                        font-size: 1.2rem;
-                        color: #444;
-                    }
+          .breadcrumb {
+            background-color: transparent;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+          }
 
-                    .o_searchview {
-                        border-radius: 0;
-                    }
+          .o_searchview {
+            border-radius: 0;
+          }
 
-                    .btn-group > .btn {
-                        border-radius: 0;
-                        color: #666;
-                        text-transform: uppercase;
-                    }
-                }
-
-                .o_content {
-                    border-radius: $main-radius;
-                }
-            }
+          .btn-group > .btn {
+            border-radius: 0;
+            color: #666;
+            text-transform: uppercase;
+          }
         }
+
+        .o_content {
+          border-radius: $main-radius;
+        }
+      }
     }
-}
-
-
-// LIST VIEW
-$table-cell-padding: 0.5rem;
-.o_form_view .o_field_widget .o_list_view {
-    border: 1px solid #ddd;
-}
-
-.o_list_view {
-    thead {
-        background-color: #fafaf9;
-        text-transform: uppercase;
-
-        tr {
-            th {
-                border-left: unset;
-                border-bottom: unset;
-                padding: $table-cell-padding;
-                border-top-color: transparent;
-
-                &.o_list_record_selector {
-                    width: 46px;
-                    text-align: center;
-                }
-            }
-        }
-    }
-
-    tbody {
-        tr {
-            &:nth-of-type(2n+1) {
-                background-color: unset;
-            }
-
-            &.o_data_row:hover {
-                background-color: #FFF;
-                box-shadow: $shadow-light;
-            }
-            &.o_group_header {
-                background-image: linear-gradient(to bottom, #eee, #eee);
-            }
-
-            td {
-                padding: $table-cell-padding;
-
-                &.o_list_record_selector {
-                    text-align: center;
-                }
-            }
-        }
-
-    }
-}
-// END - LIST VIEW
-
-
-// FORM VIEW
-.o_form_view {
-
-    // notebook
-    .nav-tabs .nav-link {
-        &:hover {
-            border-color: transparent;
-        }
-        &.active {
-            border: unset;
-            border-bottom: 3px solid #30528a;
-            font-weight: bold;
-            color: #30528a;
-        }
-    }
+  }
 }
