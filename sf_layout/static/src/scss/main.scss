@@ -3,7 +3,7 @@ html {
     font-family: $main-font;
     font-size: $main-fontsize;
 
-    & > .o_main {
+    &>.o_main {
       background-image: url('/sf_layout/static/src/img/bg.png');
       background-size: 100%;
       background-position: top center;
@@ -34,13 +34,20 @@ html {
             border-radius: 0;
           }
 
-          .btn-group > .btn {
+          .btn-group>.btn {
             border-radius: 0;
             color: #666;
             text-transform: uppercase;
           }
         }
 
+        @include media-breakpoint-down(sm) {
+          overflow: auto;
+
+          .o_content {
+            overflow: auto;
+          }
+        }
         .o_content {
           border-radius: $main-radius;
         }
