@@ -1,0 +1,14 @@
+.o_form_view .o_group.o_inner_group>tbody>tr>td {
+
+    span.o_field_widget:not(.o_invisible_modifier),
+    a.o_field_widget:not(.o_invisible_modifier),
+    div.o_field_widget:not(.o_input):not(.o_field_many2one):not(.o_field_date):not(.o_invisible_modifier):not(.o_field_boolean) {
+        min-width: 100%;
+        min-height: 20px;
+        border-bottom: 1px dashed #ccc;
+    }
+
+    .o_field_widget.o_field_empty {
+        display: block !important;
+    }
+}
