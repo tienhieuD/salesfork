@@ -1,5 +1,25 @@
 .o_form_view {
 
+  .oe_button_box {
+    width: auto;
+    float: unset;
+    margin: -17px -16px 4px -17px;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+  }
+
+  // group
+  .o_group {
+
+    .o_td_label {
+      border-right: transparent;
+
+      .o_form_label {
+        white-space: unset;
+      }
+    }
+  }
+
   // notebook
   .nav-tabs .nav-link {
     &:hover {
@@ -123,6 +143,36 @@
       border-left: 1px solid #dee2e6;
       background-color: white;
     }
+  }
+}
+
+
+// border fields in form
+$field-border-color: #ddd;
+.o_form_view.o_form_readonly {
+  .o_group:not(.oe_subtotal_footer) {
+    .o_td_label + td {
+      > :not(.o_field_x2many_list):not(.o_field_boolean):nth-child(1) {
+        border-bottom: 1px solid $field-border-color;
+        display: flex;
+        min-height: 20px;
+        > * {
+          padding-right: 4px;
+        }
+      }
+    }
+  }
+
+  .o_field_widget.o_field_empty:not(.o_invisible_modifier) {
+    display: block !important;
+    font-size: 0;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .o_field_text.o_field_widget.o_field_empty:not(.o_invisible_modifier):not(.o_readonly_modifier) {
+    min-height: 20px;
+    border-bottom: 1px solid $field-border-color;
   }
 }
 

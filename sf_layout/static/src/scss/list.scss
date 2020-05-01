@@ -3,21 +3,30 @@
   border: 1px solid #ddd;
 }
 
+.o_view_controller .table-responsive .o_list_view {
+    tfoot, thead {
+        z-index: 3;
+    }
+}
+
 .o_list_view {
   thead {
     background-color: #fafaf9;
     text-transform: uppercase;
+    font-size: 1rem;
 
     tr {
       th {
-        border-left: unset;
-        border-bottom: unset;
-        padding: 1rem $table-cell-padding;
+        border-left: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding: $table-cell-padding; // 1rem
         border-top-color: transparent;
+        text-align: left !important;
+        vertical-align: top;
 
         &.o_list_record_selector {
           width: 46px;
-          text-align: center;
+          text-align: center !important;
         }
       }
     }
@@ -36,6 +45,9 @@
 
       &.o_group_header {
         background-image: linear-gradient(to bottom, #eee, #eee);
+        th, td {
+          border-bottom: 1px solid #ddd;
+        }
       }
 
       td {
@@ -46,6 +58,7 @@
         }
       }
     }
+
 
   }
 }

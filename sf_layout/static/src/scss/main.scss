@@ -2,6 +2,7 @@ html {
   body.o_web_client {
     font-family: $main-font;
     font-size: $main-fontsize;
+    letter-spacing: -0.2px;
 
     &>.o_main {
       background-image: url('/sf_layout/static/src/img/bg.png');
@@ -19,8 +20,8 @@ html {
         .o_control_panel {
           border-radius: $main-radius $main-radius 0 0;
           background-color: #f3f2f2;
-          background-image: url('/sf_layout/static/src/img/cp-bg.png');
-          background-size: 120px;
+          //background-image: url('/sf_layout/static/src/img/cp-bg.png');
+          background-size: 60px;
           border-bottom-color: #ddd;
 
           .breadcrumb {
@@ -31,13 +32,19 @@ html {
           }
 
           .o_searchview {
-            border-radius: 0;
+            border-radius: $main-radius;
+            .o_searchview_input_container {
+              .o_searchview_facet {
+                border-radius: $main-radius/1.5;
+              }
+            }
           }
 
           .btn-group>.btn {
-            border-radius: 0;
-            color: #666;
+            border-radius: $main-radius;
+            color: #454545;
             text-transform: uppercase;
+            font-size:0.9rem;
           }
         }
 

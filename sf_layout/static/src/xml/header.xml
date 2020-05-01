@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<templates id="template" xml:space="preserve">
+<!-- xml:space="preserve"-->
+<templates id="template">
     <header t-extend="Menu">
         <!--        <t t-jquery=".o_main_navbar" t-operation="prepend">-->
         <!--            <div class="sf_top_nav">-->
@@ -22,10 +23,95 @@
     </header>
 
 
+    <!--    <t t-extend="AppsMenu">-->
+    <!--        <t t-jquery=".fa.fa-th-large" t-operation="attributes">-->
+    <!--            <attribute name="class">fa fa-th sf_menu</attribute>-->
+    <!--        </t>-->
+    <!--        <t t-jquery=".o_app" t-operation="prepend">-->
+    <!--            <img class="sf_app_menu_icon" t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>-->
+    <!--        </t>-->
+    <!--        <t t-jquery="li.dropdown" t-operation="attributes">-->
+    <!--            <attribute name="class">o_hihi</attribute>-->
+    <!--        </t>-->
+    <!--    </t>-->
+
     <t t-extend="AppsMenu">
-        <t t-jquery=".fa.fa-th-large" t-operation="attributes">
-            <attribute name="class">fa fa-th sf_menu</attribute>
+        <t t-jquery="li.dropdown" t-operation="replace">
+            <li class="sf_app_menu">
+                <a class="full sf_open_menu" data-toggle="x-dropdown" data-display="static" href="javascript:void(0)">
+                    <i class="fa fa-th sf_menu"/>
+                </a>
+                <div class="sf_menu_content" role="menu">
+                    <div class="sf_menu_overlay"/>
+                    <div class="sf_menu_header">
+                        <a class="full sf_close_menu" data-toggle="x-dropdown" data-display="static"
+                           href="javascript:void(0)">
+                            <i class="fa fa-th sf_menu"/>
+                        </a>
+                        <div class="sf_logo">
+                            <img src="/logo.png"/>
+                        </div>
+                    </div>
+                    <div class="sf_menu_list">
+                        <t t-foreach="widget.sorted_menu_category_ids" t-as="category_id">
+                            <div class="sf_menu_group">
+                                <h3>
+                                    <t t-esc="widget.menu_categories[category_id]"/>
+                                </h3>
+                                <t t-foreach="widget.getAppsInCategory(category_id)" t-as="app">
+                                    <a role="menuitem" t-attf-href="#menu_id=#{app.menuID}"
+                                       class="o_app sf_menu_item"
+                                       t-att-title="app.name"
+                                       t-att-data-menu-id="app.menuID"
+                                       t-att-data-menu-xmlid="app.xmlID"
+                                       t-att-data-action-id="app.actionID">
+                                        <img class="sf_app_menu_icon"
+                                             t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>
+                                        <span class="sf_app_name" t-esc="app.name"/>
+                                    </a>
+                                </t>
+                            </div>
+                        </t>
+
+                        <div class="sf_menu_group">
+                            <t t-foreach="widget.getAppsInCategory(false)" t-as="app">
+                                <a role="menuitem" t-attf-href="#menu_id=#{app.menuID}"
+                                   class="o_app sf_menu_item"
+                                   t-att-title="app.name"
+                                   t-att-data-menu-id="app.menuID"
+                                   t-att-data-menu-xmlid="app.xmlID"
+                                   t-att-data-action-id="app.actionID">
+                                    <img class="sf_app_menu_icon"
+                                         t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>
+                                    <span class="sf_app_name" t-esc="app.name"/>
+                                </a>
+                            </t>
+                        </div>
+
+                        <!--                        <t t-foreach="widget.getApps()" t-as="app">-->
+                        <!--                            <div class="sf_menu_group">-->
+                        <!--                                <h3>Bán hàng</h3>-->
+                        <!--                                <a role="menuitem" t-attf-href="#menu_id=#{app.menuID}"-->
+                        <!--                                   class="o_app sf_menu_item"-->
+                        <!--                                   t-att-data-menu-id="app.menuID"-->
+                        <!--                                   t-att-data-menu-xmlid="app.xmlID"-->
+                        <!--                                   t-att-data-action-id="app.actionID">-->
+                        <!--                                    <img class="sf_app_menu_icon"-->
+                        <!--                                         t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>-->
+                        <!--                                    <t t-esc="app.name"/>-->
+                        <!--                                </a>-->
+                        <!--                            </div>-->
+                        <!--                        </t>-->
+                    </div>
+                    <div class="sf_menu_footer">
+                        <a href="#" class="sf_pending_menu">
+                            <i class="fa fa-caret-square-o-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </li>
         </t>
+
     </t>
 
 
@@ -34,7 +120,13 @@
 
         <t t-if="!menu.children.length">
             <t t-set="_link">
-                <a role="menuitem" t-attf-href="#menu_id=#{menu.id}&amp;action=#{menu.action ? menu.action.split(',')[1] : ''}" t-att-data-menu="menu.id" t-att-data-action-model="menu.action ? menu.action.split(',')[0] : ''" t-att-data-action-id="menu.action ? menu.action.split(',')[1] : ''" t-att-data-menu-xmlid="menu.xmlid" t-attf-class="#{inNavbar ? '' : 'dropdown-item f_menu_open_dropdown '}o_menu_entry_lvl_#{depth}" data-toggle="collapse" data-target="#o_navbar_collapse.in">
+                <a role="menuitem"
+                   t-attf-href="#menu_id=#{menu.id}&amp;action=#{menu.action ? menu.action.split(',')[1] : ''}"
+                   t-att-data-menu="menu.id" t-att-data-action-model="menu.action ? menu.action.split(',')[0] : ''"
+                   t-att-data-action-id="menu.action ? menu.action.split(',')[1] : ''"
+                   t-att-data-menu-xmlid="menu.xmlid"
+                   t-attf-class="#{inNavbar ? '' : 'dropdown-item f_menu_open_dropdown '}o_menu_entry_lvl_#{depth}"
+                   data-toggle="collapse" data-target="#o_navbar_collapse.in">
                     <span>
                         <t t-esc="menu.name"/>
                     </span>
@@ -50,7 +142,8 @@
         <t t-else="">
             <!--Sửa và thay thế từ đây-->
             <div class="sf_dropdown">
-                <a href="#" class="dropdown-item sf_menu_open_dropdown" t-att-data-menu-xmlid="menu.xmlid" data-toggle="dropdown" data-display="static" role="button" type="button" aria-expanded="false">
+                <a href="#" class="dropdown-item sf_menu_open_dropdown" t-att-data-menu-xmlid="menu.xmlid"
+                   data-toggle="dropdown" data-display="static" role="button" type="button" aria-expanded="false">
                     <span>
                         <t t-esc="menu.name"/>
                     </span>
