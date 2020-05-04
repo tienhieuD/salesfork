@@ -20,6 +20,9 @@
         <t t-jquery=".o_menu_brand" t-operation="attributes">
             <attribute name="class">o_menu_brand o_hidden</attribute>
         </t>
+        <t t-jquery=".o_main_navbar" t-operation="after">
+            <div class="sf_line"/>
+        </t>
     </header>
 
 
