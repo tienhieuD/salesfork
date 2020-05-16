@@ -1,5 +1,6 @@
 .o_form_view {
     .o_form_statusbar {
+        background-color: unset;
         &>.o_statusbar_status {
             border-radius: 20px;
             overflow: hidden;
@@ -8,7 +9,6 @@
             &>.o_arrow_button {
                 color: #666;
                 background-color: #e9ecef;
-                font-size: 10px;
                 font-size: 0.9rem;
                 text-transform: unset;
                 &:last-child {
@@ -39,7 +39,7 @@
   .oe_button_box {
     width: auto;
     float: unset;
-    margin: -17px -16px 4px -17px;
+    margin: -17px -16px 25px -17px;
     border-bottom: 1px solid #ccc;
     overflow: hidden;
   }

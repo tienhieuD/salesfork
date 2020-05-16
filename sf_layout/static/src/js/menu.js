@@ -46,6 +46,13 @@ odoo.define('sf_layout.menu', function (require) {
             this.setMenuMode(this.menu_mode);
             return this._super.apply(this, arguments);
         },
+        /**
+         * Inherit from web_responsive, make auto close menu when item clicked
+         */
+        _onAppsMenuItemClicked: function (ev) {
+            this._onClickCloseMenuDelay.apply(this, arguments);
+            return this._super.apply(this, arguments);
+        },
 
         setMenuMode: function (mode) {
             let $content = $('.o_main_content'),
@@ -99,7 +106,7 @@ odoo.define('sf_layout.menu', function (require) {
             if (this.menu_mode === 'pending') {
                 return true;
             }
-            return setTimeout(this.setMenuMode.bind(this, 'close'), 100);
+            return setTimeout(this.setMenuMode.bind(this, 'close'), 500);
         },
 
         getAppsInCategory: function (category_id) {
