@@ -27,6 +27,7 @@
                 <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/loading.scss"/>
             </xpath>
             <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript" src="/sf_layout/static/src/js/chatter.js"/>
                 <script type="text/javascript" src="/sf_layout/static/src/js/menu.js"/>
                 <script type="text/javascript" src="/sf_layout/static/src/js/tip.js"/>
             </xpath>

@@ -1,16 +1,23 @@
 .o_form_view {
     .o_form_statusbar {
         //background-color: unset;
+        .hide_chatter_btn {
+            position: absolute;
+            right: 0;
+            top: 1px;
+        }
         &>.o_statusbar_status {
             border-radius: 20px;
             overflow: hidden;
             height: 26px;
-            margin: 3px 14px 0 0;
+            margin: 3px 42px 3px 0;
             &>.o_arrow_button {
                 color: #666;
                 background-color: #e9ecef;
                 font-size: 0.9rem;
                 text-transform: unset;
+                letter-spacing: -0.5px;
+                padding: 0 4px 0 16px;
                 &:last-child {
                     border-left: unset;
                 }
