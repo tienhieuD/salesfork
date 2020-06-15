@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
+
+    <!--Thay text button chatter-->
     <t t-extend="mail.chatter.Buttons">
         <t t-jquery=".o_chatter_button_new_message" t-operation="replace">
             <button t-if="newMessageButton" type="button" class="btn btn-link o_chatter_button_new_message" title="Send a message" disabled="disabled">
                 <span>Message</span>
             </button>
         </t>
-        <!--<t t-jquery=".o_chatter_button_log_note" t-operation="replace">-->
-            <!--<button t-if="logNoteButton" class="btn btn-link o_chatter_button_log_note" title="Log a note. Followers will not be notified." disabled="disabled">-->
-                <!--<i class="fa fa-sticky-note-o"> </i>-->
-            <!--</button>-->
-        <!--</t>-->
         <t t-jquery=".o_chatter_button_schedule_activity" t-operation="replace">
             <button t-if="scheduleActivityButton" class="btn btn-link o_chatter_button_schedule_activity" title="Log or schedule an activity" disabled="disabled">
                 <i class="fa fa-clock-o" role="img" aria-label="Dates" title="Dates"/>
@@ -28,25 +25,4 @@
             </button>
         </t>
     </t>
-
-    <!--<t t-extend="mail.widget.Thread.Message">-->
-        <!--<t t-jquery=".o_thread_message_content" t-operation="after">-->
-            <!--<div class="o_react" t-att-liked="message.liked">-->
-                <!--<i class="fa fa-thumbs-up tooltip_liked" data-original-title="" title="" t-att-data-message-id="message.getID()">-->
-                    <!--<span data-toggle="tooltip"><t t-esc="message.liked_partner_ids.length" /></span>-->
-                    <!--<t t-if="message.liked_partner_name.length">-->
-                        <!--<div class="_partnerLiked">-->
-                            <!--<div class="arr"></div>-->
-                            <!--<ul>-->
-                                <!--<t t-foreach="message.liked_partner_name" t-as="partnerName">-->
-                                    <!--<li><a><t t-esc="partnerName" /></a></li>-->
-                                <!--</t>-->
-                            <!--</ul>-->
-                        <!--</div>-->
-                    <!--</t>-->
-                <!--</i>-->
-            <!--</div>-->
-        <!--</t>-->
-    <!--</t>-->
-
 </templates>

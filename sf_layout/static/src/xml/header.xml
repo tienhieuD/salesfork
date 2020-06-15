@@ -2,21 +2,7 @@
 <!-- xml:space="preserve"-->
 <templates id="template">
     <header t-extend="Menu">
-        <!--        <t t-jquery=".o_main_navbar" t-operation="prepend">-->
-        <!--            <div class="sf_top_nav">-->
-        <!--                <div class="row">-->
-        <!--                    <div class="col-sm-3">-->
-        <!--                        <img class="sf_logo" src="/logo"/>-->
-        <!--                    </div>-->
-        <!--                    <div class="col-sm-6 text-center">-->
-        <!--&lt;!&ndash;                        <img src="https://i.imgur.com/WkJtsmf.png" style="margin-top: 8px;"/>&ndash;&gt;-->
-        <!--                    </div>-->
-        <!--                    <div class="col-sm-3">-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </t>-->
-
+        <!--Ẩn tiêu đề lớn mỗi menu app-->
         <t t-jquery=".o_menu_brand" t-operation="attributes">
             <attribute name="class">o_menu_brand o_hidden</attribute>
         </t>
@@ -25,19 +11,7 @@
         </t>
     </header>
 
-
-    <!--    <t t-extend="AppsMenu">-->
-    <!--        <t t-jquery=".fa.fa-th-large" t-operation="attributes">-->
-    <!--            <attribute name="class">fa fa-th sf_menu</attribute>-->
-    <!--        </t>-->
-    <!--        <t t-jquery=".o_app" t-operation="prepend">-->
-    <!--            <img class="sf_app_menu_icon" t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>-->
-    <!--        </t>-->
-    <!--        <t t-jquery="li.dropdown" t-operation="attributes">-->
-    <!--            <attribute name="class">o_hihi</attribute>-->
-    <!--        </t>-->
-    <!--    </t>-->
-
+    <!--App menu-->
     <t t-extend="AppsMenu">
         <t t-jquery="li.dropdown" t-operation="replace">
             <li class="sf_app_menu">
@@ -65,13 +39,12 @@
                 </div>
             </li>
         </t>
-
     </t>
 
 
+    <!--Menu app items (base)-->
     <t t-name="Menu.link">
         <t t-set="depth" t-value="(depth || 0) + 1"/>
-
         <t t-if="!menu.children.length">
             <t t-set="_link">
                 <a role="menuitem"
@@ -94,6 +67,7 @@
             </t>
         </t>
         <t t-else="">
+
             <!--Sửa và thay thế từ đây-->
             <div class="sf_dropdown">
                 <a href="#" class="dropdown-item sf_menu_open_dropdown" t-att-data-menu-xmlid="menu.xmlid"
@@ -112,9 +86,11 @@
                 </div>
             </div>
             <!--End - Sửa và thay thế từ đây-->
+
         </t>
     </t>
 
+    <!--Thêm icon down cho menu-->
     <t t-extend="Menu.sections">
         <t t-jquery=".dropdown-toggle.o-no-caret.o_menu_header_lvl_1" t-operation="attributes">
             <attribute name="class">dropdown-toggle o-no-caret sf-caret o_menu_header_lvl_1</attribute>

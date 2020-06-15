@@ -28,13 +28,15 @@ odoo.define('sf_layout.menu', function (require) {
                 this._apps[n].web_icon_data = menuData.children[n].web_icon_data;
             }
         },
-        _onClickOverLay: function () {
+        _onClickOverLay: function (event) {
+            event.preventDefault();
+            event.stopPropagation();
             this.toggleMenu();
         },
         toggleMenu: function () {
             let menu = this.$el.find(".sf_menu_content");
             this.menuShow = !this.menuShow;
-            this.menuShow ? menu.addClass("open") : menu.removeClass("open")
+            this.menuShow ? menu.addClass("open") : menu.removeClass("open");
         },
 
         _onClickCloseMenuDelay: function () {

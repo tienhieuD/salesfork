@@ -23,7 +23,6 @@
                 <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/main.scss"/>
                 <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/list.scss"/>
                 <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/form.scss"/>
-                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/form_fields.scss"/>
                 <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/loading.scss"/>
             </xpath>
             <xpath expr="//script[last()]" position="after">

@@ -1,6 +1,6 @@
 {
     'name': "Salesfork Layout",
-    'author': 'Handsome Guys, Odoo Community Association (OCA)',
+    'author': 'tienhieuD, Odoo Community Association (OCA)',
     'version': '12.0.1.0.0',
     'maintainer': 'tienhieuD',
     'website': "http://odoo.com",
@@ -10,19 +10,7 @@
     'summary': """Salesfork Layout""",
     'depends': ['base', 'web', 'mail', 'web_tour'],
     'data': [
-        # 'security/ir.model.access.csv',
         'views/assets.xml',
-        # 'views/ir_ui_menu.xml',
-        # 'views/res_config_settings.xml',
-        # 'views/workslip_view.xml',
-        # 'views/work_mark_view.xml',
-        # 'views/work_type_view.xml',
-        # 'views/workslip_run_view.xml',
-        # 'views/menu.xml',
-        # 'views/res_partner.xml',
-        # 'views/nis_workday.xml',
-        # 'views/nis_workday_view.xml',
-        # 'views/mail_activity.xml',
     ],
     'demo': [
     ],

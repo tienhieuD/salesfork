@@ -4,11 +4,9 @@ header {
 
   .o_main_navbar {
     height: $navbar-height;
-    //border-bottom-color: $navbar-border;
     border-bottom: unset;
     background-color: $navbar-bg;
     color: $navbar-color;
-    //box-shadow: $shadow-light;
     padding: 0 12px;
     z-index: 1000;
 
@@ -73,7 +71,6 @@ header {
         }
       }
     }
-
     // End - Menu dropdown multi level styles
 
     & > ul {
@@ -100,7 +97,6 @@ header {
           &:active,
           &:focus {
             background-color: $navbar-bg-hover;
-            //border-bottom: 2px solid;
 
             &::before {
               opacity: 1;
