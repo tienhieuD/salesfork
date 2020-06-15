@@ -46,73 +46,22 @@
                 </a>
                 <div class="sf_menu_content" role="menu">
                     <div class="sf_menu_overlay"/>
-                    <!--<div class="sf_menu_header">-->
-                        <!--<a class="full sf_close_menu" data-toggle="x-dropdown" data-display="static"-->
-                           <!--href="javascript:void(0)">-->
-                            <!--<i class="fa fa-th sf_menu"/>-->
-                        <!--</a>-->
-                        <!--<div class="sf_logo">-->
-                            <!--<img src="/logo.png"/>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <div class="arrow-up"></div>
+                    <div class="arrow-up"> </div>
                     <div class="sf_menu_list">
-                        <t t-foreach="widget.sorted_menu_category_ids" t-as="category_id">
-                            <div class="sf_menu_group">
-                                <h3>
-                                    <t t-esc="widget.menu_categories[category_id]"/>
-                                </h3>
-                                <t t-foreach="widget.getAppsInCategory(category_id)" t-as="app">
-                                    <a role="menuitem" t-attf-href="#menu_id=#{app.menuID}"
-                                       class="o_app sf_menu_item"
-                                       t-att-data-menu-id="app.menuID"
-                                       t-att-data-menu-xmlid="app.xmlID"
-                                       t-att-data-action-id="app.actionID">
-                                        <img class="sf_app_menu_icon"
-                                             t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>
-                                        <span t-att-title="app.name" class="sf_app_name" t-esc="app.name"/>
-                                    </a>
-                                </t>
-                            </div>
-                        </t>
-                        <t t-set="menuCateFalse" t-value="widget.getAppsInCategory(false)" />
-                        <t t-if="menuCateFalse.length">
-                            <div class="sf_menu_group">
-                                <t t-foreach="menuCateFalse" t-as="app">
-                                    <a role="menuitem" t-attf-href="#menu_id=#{app.menuID}"
-                                       class="o_app sf_menu_item"
-                                       t-att-title="app.name"
-                                       t-att-data-menu-id="app.menuID"
-                                       t-att-data-menu-xmlid="app.xmlID"
-                                       t-att-data-action-id="app.actionID">
-                                        <img class="sf_app_menu_icon"
-                                             t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>
-                                        <span class="sf_app_name" t-esc="app.name"/>
-                                    </a>
-                                </t>
-                            </div>
-                        </t>
-
-                        <!--                        <t t-foreach="widget.getApps()" t-as="app">-->
-                        <!--                            <div class="sf_menu_group">-->
-                        <!--                                <h3>Bán hàng</h3>-->
-                        <!--                                <a role="menuitem" t-attf-href="#menu_id=#{app.menuID}"-->
-                        <!--                                   class="o_app sf_menu_item"-->
-                        <!--                                   t-att-data-menu-id="app.menuID"-->
-                        <!--                                   t-att-data-menu-xmlid="app.xmlID"-->
-                        <!--                                   t-att-data-action-id="app.actionID">-->
-                        <!--                                    <img class="sf_app_menu_icon"-->
-                        <!--                                         t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>-->
-                        <!--                                    <t t-esc="app.name"/>-->
-                        <!--                                </a>-->
-                        <!--                            </div>-->
-                        <!--                        </t>-->
+                        <div class="sf_menu_group">
+                            <t t-foreach="widget._apps" t-as="app">
+                                <a role="menuitem" t-attf-href="#menu_id=#{app.menuID}"
+                                   class="o_app sf_menu_item"
+                                   t-att-data-menu-id="app.menuID"
+                                   t-att-data-menu-xmlid="app.xmlID"
+                                   t-att-data-action-id="app.actionID">
+                                    <img class="sf_app_menu_icon"
+                                         t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>
+                                    <span t-att-title="app.name" class="sf_app_name" t-esc="app.name"/>
+                                </a>
+                            </t>
+                        </div>
                     </div>
-                    <!--<div class="sf_menu_footer">-->
-                        <!--<a href="#" class="sf_pending_menu">-->
-                            <!--<i class="fa fa-caret-square-o-left"></i>-->
-                        <!--</a>-->
-                    <!--</div>-->
                 </div>
             </li>
         </t>
