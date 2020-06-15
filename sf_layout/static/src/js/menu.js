@@ -6,16 +6,26 @@ odoo.define('sf_layout.menu', function (require) {
     let Menu = require("web.Menu");
     let core = require('web.core');
 
+    Menu.include({
+        change_menu_section: function (primary_menu_id) {
+            this._super(primary_menu_id);
+            this._appsMenu.$el.find("[data-menu-id='"+primary_menu_id+"']").addClass("active");
+        }
+    })
+
     AppsMenu.include({
         events: _.extend({}, AppsMenu.prototype.events, {
-            'click .sf_open_menu': '_onClickOpenMenu',
-            'click .sf_close_menu': '_onClickCloseMenu',
+            'click ._aMenu': 'toggleMenu',
+            // 'click .sf_open_menu': '_onClickOpenMenu',
+            // 'click .sf_close_menu': '_onClickCloseMenu',
             'click .sf_menu_content': '_onClickCloseMenuDelay',
             'click .sf_pending_menu': '_onClickPendingMenu',
+            'click .sf_menu_overlay': '_onClickOverLay',
         }),
 
         init: function (parent, menuData) {
             this._super.apply(this, arguments);
+            this.menuShow = false;
             for (var n in this._apps) {
                 this._apps[n].web_icon_data = menuData.children[n].web_icon_data;
                 this._apps[n].x_menu_category_id = menuData.children[n].x_menu_category_id;
@@ -29,7 +39,14 @@ odoo.define('sf_layout.menu', function (require) {
             this.menu_category_ids = _.chain(this.menu_categories).keys().map(id => parseInt(id)).value();
             this.menu_mode = localStorage.getItem('sf_menu_mode') || 'close';
         },
-
+        _onClickOverLay: function () {
+            this.toggleMenu();
+        },
+        toggleMenu: function (e) {
+            let menu = this.$el.find(".sf_menu_content");
+            this.menuShow = !this.menuShow;
+            this.menuShow ? menu.addClass("open") : menu.removeClass("open")
+        },
         willStart: function () {
             let self = this;
             return $.when(this._super.apply(this, arguments), this._rpc({
@@ -43,7 +60,7 @@ odoo.define('sf_layout.menu', function (require) {
         },
 
         start: function () {
-            this.setMenuMode(this.menu_mode);
+            // this.setMenuMode(this.menu_mode);
             return this._super.apply(this, arguments);
         },
 
@@ -87,9 +104,10 @@ odoo.define('sf_layout.menu', function (require) {
 
         _onClickOpenMenu: function (event) {
             event.preventDefault();
-            this.setMenuMode('normal');
+            this.setMenuMode('pending');
         },
         _onClickCloseMenu: function (event) {
+            alert("close")
             event.preventDefault();
             this.setMenuMode('close');
         },

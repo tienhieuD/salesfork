@@ -29,6 +29,9 @@
             <xpath expr="//script[last()]" position="after">
                 <script type="text/javascript" src="/sf_layout/static/src/js/menu.js"/>
                 <script type="text/javascript" src="/sf_layout/static/src/js/tip.js"/>
+                <!--<script type="text/javascript" src="/sf_layout/static/src/js/loading.js"/>-->
+                <script type="text/javascript" src="/sf_layout/static/src/js/form.js"/>
+                <!--<script type="text/javascript" src="/sf_layout/static/src/js/thread_widget.js"/>-->
             </xpath>
         </template>
     </data>
