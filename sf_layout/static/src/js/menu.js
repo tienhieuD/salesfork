@@ -5,13 +5,28 @@ odoo.define('sf_layout.menu', function (require) {
     let Menu = require("web.Menu");
 
     Menu.include({
-        /**
-         * @override: Mặc định add class active cho menu sau khi tải lại trang.
-         */
-        change_menu_section: function (primary_menu_id) {
-            this._super(primary_menu_id);
-            this._appsMenu.$el.find("[data-menu-id='"+primary_menu_id+"']").addClass("active");
-        }
+        _onAppNameClicked: function (ev) {
+            this._super.apply(this, arguments);
+            this._markCurrentMenuAsActive();
+        },
+
+        _on_secondary_menu_click: function (menu_id, action_id) {
+            this._super.apply(this, arguments);
+            this._markCurrentMenuAsActive(menu_id);
+        },
+
+        _markCurrentMenuAsActive: function (menu_id) {
+            // Remove all active class
+            this.$el.find("a[data-menu],.o_menu_header_lvl_1,.sf_menu_open_dropdown").removeClass('active');
+            if (!menu_id) {
+                return;
+            }
+            // Add class active current menu
+            let $current_menu = this.$el.find("a[data-menu='" + menu_id + "']");
+            $current_menu.addClass('active');
+            $current_menu.closest('.sf_dropdown').find('.sf_menu_open_dropdown').addClass('active');
+            $current_menu.closest('li').find('.o_menu_header_lvl_1').addClass('active');
+        },
     });
 
     AppsMenu.include({

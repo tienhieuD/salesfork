@@ -1,10 +1,19 @@
 .o_form_view {
+  .o_horizontal_separator {
+    font-weight: normal;
+    color: #333;
+  }
+
   .o_form_statusbar {
     & > .o_statusbar_status {
       border-radius: 11px;
       overflow: hidden;
       height: 22px;
-      margin: 6px 14px 0 0;
+      margin: 6px 14px 6px 0;
+
+      .dropdown-menu .dropdown-item.btn {
+        text-transform: unset;
+      }
 
       &._noChatter {
         margin-right: calc((100% - 1140px + 16px) / 1.5);
@@ -15,6 +24,7 @@
         background-color: #e9ecef;
         font-size: 1.0rem;
         text-transform: unset;
+        min-width: 90px;
 
         &:last-child {
           border-left: unset;
@@ -56,7 +66,7 @@
     }
   }
 
-  // notebook
+  // notebook - common
   .nav-tabs .nav-link {
     &:hover {
       border-color: transparent;
@@ -68,6 +78,26 @@
       font-weight: bold;
       color: #30528a;
     }
+  }
+
+  // notebook - sf_wrapper
+  .o_notebook.sf_wrapper,
+  .o_notebook.wrapper {
+    .nav-tabs .nav-link {
+        &.active {
+            border: 1px solid #ddd;
+            border-bottom: 1px solid #FFF;
+            border-top: 3px solid;
+            border-radius: 0;
+            &::after {
+                content: '';
+                display: block;
+                background: transparent;
+                width: 1px;
+                height: 1px;
+            }
+        }
+      }
   }
 
   // Chatter
@@ -108,11 +138,7 @@ $chatter-width: 30%;
 
   & > .oe_chatter {
     &._nHeadB {
-      //margin-top: 15px;
-      //padding: 0px 10px 0px 10px;
-      //border: 0px;
       .o_chatter_topbar {
-        border-top: 1px solid #cdcdcd;
         border-bottom: 1px solid #cdcdcd;
       }
     }
@@ -123,7 +149,7 @@ $chatter-width: 30%;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding: 8px 16px;
+    padding: 0;
     min-width: unset;
 
     .o_chatter_button_new_message, .o_chatter_button_log_note, .o_topbar_right_area {
@@ -368,6 +394,11 @@ $chatter-width: 30%;
 // border fields in form
 $field-border-color: #ddd;
 .o_form_view.o_form_readonly {
+  .o_group.o_inner_group.oe_subtotal_footer > tbody > tr > td .o_field_widget {
+    // không boder ở phần tổng đơn hàng
+    border-bottom: unset !important;
+  }
+
   .o_group:not(.oe_subtotal_footer) {
     .o_td_label + td {
       > :not(.o_field_x2many_list):not(.o_field_boolean):nth-child(1) {
@@ -384,13 +415,13 @@ $field-border-color: #ddd;
         display: block !important;
       }
 
-      > .o_form_uri {
+      > .o_form_uri:not(.o_invisible_modifier) {
         display: block !important;
       }
     }
   }
 
-  .o_field_widget.o_field_empty:not(.o_invisible_modifier) {
+  .o_field_widget.o_field_empty:not(.o_invisible_modifier):not(.oe_inline) {
     display: block !important;
     font-size: 0;
     pointer-events: none;
@@ -411,4 +442,10 @@ $field-border-color: #ddd;
       overflow: auto;
     }
   }
+}
+
+// Keep o_external_button closer to m2o field
+.o_field_widget.o_field_many2one .o_external_button {
+    padding: 0 2px !important;
+    font-size: 1.3rem;
 }

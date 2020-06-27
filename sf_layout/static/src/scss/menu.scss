@@ -19,7 +19,7 @@
 }
 
 .o_main_navbar > ul > li > a.sf-caret {
-  padding-right: 18px;
+  padding-right: 14px;
 }
 
 .dropdown-toggle.o-no-caret.sf-caret::after {
@@ -31,6 +31,7 @@
 }
 
 .sf_app_menu {
+  cursor: pointer;
   .sf_menu_content {
     display: flex;
     flex-flow: column;
@@ -43,6 +44,7 @@
     z-index: 1;
     width: 240px;
     transition: 100ms;
+    border-radius: $main-radius;
 
     .arrow-up {
       display: none;
@@ -50,8 +52,8 @@
 
     &.open {
       height: auto;
-      top: 64px;
-      left: $margin-main;
+      top: 58px;
+      left: $margin-main + 6px;
 
       .arrow-up {
         display: block;
@@ -100,6 +102,7 @@
     .sf_menu_list {
       flex: 1 1 auto;
       overflow: hidden;
+      max-height: 80vh;
 
       &:hover {
         overflow: auto;
@@ -151,7 +154,7 @@
   background: #ffffff;
   position: absolute;
   transform: rotate(45deg);
-  top: -8px;
-  left: 20px;
+  top: -6px;
+  left: 14px;
   z-index: -10;
 }

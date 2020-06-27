@@ -4,7 +4,7 @@
     <header t-extend="Menu">
         <!--Ẩn tiêu đề lớn mỗi menu app-->
         <t t-jquery=".o_menu_brand" t-operation="attributes">
-            <attribute name="class">o_menu_brand o_hidden</attribute>
+            <attribute name="class">o_menu_brand</attribute>
         </t>
         <t t-jquery=".o_main_navbar" t-operation="after">
             <div class="sf_line"/>
