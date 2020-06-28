@@ -3,7 +3,7 @@
     'author': 'tienhieuD, Odoo Community Association (OCA)',
     'version': '13.0.1.0.0',
     'maintainer': 'tienhieuD',
-    'website': "http://odoo.com",
+    'website': "https://youtu.be/l2DswpWCP_E",
     'license': 'LGPL-3',
     'category': 'Theme/Backend',
     'sequence': 1000,
