@@ -21,5 +21,7 @@
         'static/src/xml/*.xml',
     ],
     "images": ['static/description/banner.png', 'static/description/theme_screenshot.png'],
+    'price': 9.99,
+    'currency': 'EUR',
     'application': True,
 }
