@@ -1,16 +1,22 @@
-header {
+body > header {
   border-bottom: 3px solid #00a1e2;
   border-top: 3px solid #eee;
 
   .o_main_navbar {
     height: $navbar-height;
-    //border-bottom-color: $navbar-border;
     border-bottom: unset;
     background-color: $navbar-bg;
     color: $navbar-color;
-    //box-shadow: $shadow-light;
     padding: 0 12px;
     z-index: 1000;
+
+    .o_menu_brand {
+        font-size: 1.6rem;
+        margin-right: 10px;
+        &:hover {
+            background-color: $navbar-bg-hover;
+        }
+    }
 
     > button {
       position: relative;
@@ -164,6 +170,7 @@ header {
             opacity: 0;
           }
 
+          &.active,
           &:hover,
           &:active,
           &:focus {

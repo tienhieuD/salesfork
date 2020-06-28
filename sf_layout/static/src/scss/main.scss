@@ -4,23 +4,23 @@ html {
     font-size: $main-fontsize;
     letter-spacing: -0.2px;
 
-    &>.o_main {
+    &>.o_main, &>.o_action_manager {
       background-image: url('/sf_layout/static/src/img/bg.png');
       background-size: 100%;
       background-position: top center;
       background-repeat: no-repeat;
       background-color: $main-bg;
 
-      .o_main_content {
-        margin: 12px;
+      .o_main_content, .o_action {
+        margin: $margin-main;
         box-shadow: $shadow-light;
         border-radius: $main-radius;
         background-color: $content-bg;
+        height: calc(100% - #{$margin-main} * 2);
 
-        .o_control_panel {
+        .o_control_panel, .o_cp_controller {
           border-radius: $main-radius $main-radius 0 0;
           background-color: #f3f2f2;
-          //background-image: url('/sf_layout/static/src/img/cp-bg.png');
           background-size: 60px;
           border-bottom-color: #ddd;
 
@@ -40,12 +40,11 @@ html {
             }
           }
 
-          .btn-group>.btn {
+          .btn-group>.btn:not(.btn-primary) {
             border-radius: $main-radius;
             color: #454545;
             text-transform: uppercase;
             font-size:0.9rem;
-            font-weight: 500;
           }
         }
 

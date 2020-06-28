@@ -59,3 +59,9 @@ html body.o_web_client > .o_main .o_main_content .o_control_panel .btn-group > .
     background: #FFF;
     top: 52px;
 }
+
+.tooltip-inner {
+  box-shadow: unset !important;
+  font-size: 1.1rem;
+  font-family: "Open Sans", "Helvetica", "Verdana", "Arial", sans-serif;
+}

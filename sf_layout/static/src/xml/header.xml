@@ -2,41 +2,29 @@
 <!-- xml:space="preserve"-->
 <templates id="template">
     <header t-extend="Menu">
-        <!--        <t t-jquery=".o_main_navbar" t-operation="prepend">-->
-        <!--            <div class="sf_top_nav">-->
-        <!--                <div class="row">-->
-        <!--                    <div class="col-sm-3">-->
-        <!--                        <img class="sf_logo" src="/logo"/>-->
-        <!--                    </div>-->
-        <!--                    <div class="col-sm-6 text-center">-->
-        <!--&lt;!&ndash;                        <img src="https://i.imgur.com/WkJtsmf.png" style="margin-top: 8px;"/>&ndash;&gt;-->
-        <!--                    </div>-->
-        <!--                    <div class="col-sm-3">-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </t>-->
-
         <t t-jquery=".o_menu_brand" t-operation="attributes">
-            <attribute name="class">o_menu_brand o_hidden</attribute>
+            <attribute name="class">o_menu_brand</attribute>
         </t>
         <t t-jquery=".o_main_navbar" t-operation="after">
             <div class="sf_line"/>
         </t>
     </header>
 
-
-    <!--    <t t-extend="AppsMenu">-->
-    <!--        <t t-jquery=".fa.fa-th-large" t-operation="attributes">-->
-    <!--            <attribute name="class">fa fa-th sf_menu</attribute>-->
-    <!--        </t>-->
-    <!--        <t t-jquery=".o_app" t-operation="prepend">-->
-    <!--            <img class="sf_app_menu_icon" t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>-->
-    <!--        </t>-->
-    <!--        <t t-jquery="li.dropdown" t-operation="attributes">-->
-    <!--            <attribute name="class">o_hihi</attribute>-->
-    <!--        </t>-->
-    <!--    </t>-->
+    <t t-name="sf.menu.item">
+        <a role="menuitem" t-attf-href="#menu_id=#{app.menuID}"
+           class="o_app sf_menu_item"
+           t-att-title="app.name"
+           t-att-data-menu-id="app.menuID"
+           t-att-data-menu-xmlid="app.xmlID"
+           t-att-data-action-id="app.actionID"
+           data-toggle="tooltip"
+           data-placement="right"
+        >
+            <img class="sf_app_menu_icon"
+                 t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>
+            <span class="sf_app_name" t-esc="app.name"/>
+        </a>
+    </t>
 
     <t t-extend="AppsMenu">
         <t t-jquery="li.dropdown" t-operation="replace">
@@ -62,32 +50,14 @@
                                     <t t-esc="widget.menu_categories[category_id]"/>
                                 </h3>
                                 <t t-foreach="widget.getAppsInCategory(category_id)" t-as="app">
-                                    <a role="menuitem" t-attf-href="#menu_id=#{app.menuID}"
-                                       class="o_app sf_menu_item"
-                                       t-att-title="app.name"
-                                       t-att-data-menu-id="app.menuID"
-                                       t-att-data-menu-xmlid="app.xmlID"
-                                       t-att-data-action-id="app.actionID">
-                                        <img class="sf_app_menu_icon"
-                                             t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>
-                                        <span class="sf_app_name" t-esc="app.name"/>
-                                    </a>
+                                    <t t-call="sf.menu.item"/>
                                 </t>
                             </div>
                         </t>
 
                         <div class="sf_menu_group">
                             <t t-foreach="widget.getAppsInCategory(false)" t-as="app">
-                                <a role="menuitem" t-attf-href="#menu_id=#{app.menuID}"
-                                   class="o_app sf_menu_item"
-                                   t-att-title="app.name"
-                                   t-att-data-menu-id="app.menuID"
-                                   t-att-data-menu-xmlid="app.xmlID"
-                                   t-att-data-action-id="app.actionID">
-                                    <img class="sf_app_menu_icon"
-                                         t-attf-src="data:image/png;base64,#{app.web_icon_data}"/>
-                                    <span class="sf_app_name" t-esc="app.name"/>
-                                </a>
+                                <t t-call="sf.menu.item"/>
                             </t>
                         </div>
 

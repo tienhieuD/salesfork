@@ -6,7 +6,7 @@
             <field name="model">ir.ui.menu</field>
             <field name="arch" type="xml">
                 <tree editable="bottom" create="false">
-                    <field name="sequence"/>
+                    <field name="sequence" widget="handle"/>
                     <field name="complete_name"/>
                     <field name="x_menu_category_id"/>
                 </tree>

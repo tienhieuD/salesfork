@@ -175,8 +175,12 @@
   }
 }
 
-.o_main_content.minimized {
+.o_main_content.minimized
+{
   margin-left: 70px !important;
+}
+.o_action_manager.minimized {
+  margin-left: 56px;
 }
 
 .o_main_navbar.minimized {
