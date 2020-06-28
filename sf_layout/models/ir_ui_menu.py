@@ -6,7 +6,6 @@ class IrUiMenu(models.Model):
 
     x_menu_category_id = fields.Many2one('x.menu.category', 'Menu Category')
 
-    @api.multi
     def read(self, fields=None, load='_classic_read'):
         if fields == ['name', 'sequence', 'parent_id', 'action', 'web_icon', 'web_icon_data']:
             fields.append('x_menu_category_id')

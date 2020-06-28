@@ -9,13 +9,13 @@ odoo.define('sf_layout.chatter', function (require) {
     var icon = {
         close: 'fa-backward',
         open: 'fa-forward',
-    }
+    };
 
     Chatter.include({
         start: function () {
             var self = this;
             return this._super.apply(this, arguments).then(function () {
-                if (localStorage.getItem('x_chatter_state') == 'close') {
+                if (localStorage.getItem('x_chatter_state') === 'close') {
                     self.$el.css('display', 'none');
                 }
             });
