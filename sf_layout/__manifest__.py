@@ -20,6 +20,6 @@
     'qweb': [
         'static/src/xml/*.xml',
     ],
-    "images": ['static/images/banner.png', 'static/description/icon.png'],
+    "images": ['static/description/banner.png', 'static/description/icon.png'],
     'application': True,
 }
