@@ -32,6 +32,12 @@
 .o_form_view {
   .o_form_statusbar {
     //background-color: unset;
+    border-bottom: unset;
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.1);
+
     .hide_chatter_btn {
       position: absolute;
       right: 0;
@@ -98,6 +104,7 @@
       .o_form_label {
         white-space: unset;
         line-height: 1;
+        font-size: 1.1rem;
       }
     }
   }
@@ -138,20 +145,23 @@
 // layout
 .o_form_view {
   .o_form_sheet_bg {
-    -webkit-box-flex: 1;
-    -webkit-flex: 3 1 auto;
     flex: 3 1 auto;
-    background-color: #f9f9f9;
+    background: unset;
     border-bottom: 1px solid #dee2e6;
 
     .o_form_sheet {
       overflow-x: auto !important;
+      margin: unset;
+      width: 100%;
+      max-width: unset !important;
+      border: unset;
+      padding-left: 42px;
+      padding-right: 42px;
+      box-shadow: unset;
     }
   }
 
   & > .oe_chatter {
-    -webkit-box-flex: 1;
-    -webkit-flex: 3 1 auto;
     flex: 3 1 auto;
     width: 100%;
     margin-right: auto;
@@ -159,19 +169,22 @@
     padding: 0;
     min-width: unset;
 
-    .o_chatter_topbar {
-      margin-top: unset;
-      border-bottom: 1px solid #eee;
+    .o_chatter_header_container {
+      padding-top: unset !important;
+      .o_chatter_topbar {
+        margin-top: unset;
+        border-bottom: 1px solid #eee;
 
-      .btn {
-        flex: 1 1 auto;
+        .btn {
+          flex: 1 1 auto;
+        }
       }
-    }
 
-    .o_thread_composer:not(.o_chat_mini_composer) {
-      border-left: unset;
-      border-right: unset;
-      border: unset;
+      .o_thread_composer:not(.o_chat_mini_composer) {
+        border-left: unset;
+        border-right: unset;
+        border: unset;
+      }
     }
   }
 }
@@ -185,10 +198,7 @@
 
 @media (min-width: 768px) {
   .o_form_view {
-    display: -webkit-box;
-    display: -webkit-flex;
     display: flex;
-    -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
     min-height: 100%;
 
@@ -205,7 +215,6 @@
   }
 
   .o_attachment {
-    //width: -webkit-fill-available;
     width: auto;
   }
 }
@@ -222,13 +231,10 @@
 
 @media (min-width: 1534px) {
   .o_form_view {
-    -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
     height: 100%;
 
     & > .o_form_sheet_bg {
-      -webkit-box-flex: 1;
-      -webkit-flex: 3 1 auto;
       flex: 3 1 auto;
       width: 75%;
       //padding: 0 16px;
@@ -237,8 +243,6 @@
     }
 
     .oe_chatter {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
       flex: 1 1 auto;
       width: 25%;
       padding: 0;

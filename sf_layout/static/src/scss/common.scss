@@ -1,11 +1,13 @@
 .btn,
 .o_input,
 .dropdown-menu {
-  border-radius: $main-radius;
+  border-radius: $main-radius / 4;
 }
 
 .o_form_view {
   .oe_button_box {
+    margin-left: -42px;
+    margin-right: -42px;
     .oe_stat_button {
       .o_button_icon {
         color: $o-community-color;
@@ -45,6 +47,21 @@ html body.o_web_client > .o_main .o_main_content .o_control_panel .btn-group > .
   color: white;
 }
 
+.o_control_panel {
+  .o_cp_right {
+    .o_cp_pager {
+      .o_pager {
+        background: rgba(0,0,0,0.05);
+        border-radius: 4px;
+        padding: 0 4px;
+        .btn {
+          background: unset;
+        }
+      }
+    }
+  }
+}
+
 .btn-secondary {
   color: $o-community-color;
   border: unset;
@@ -63,5 +80,5 @@ html body.o_web_client > .o_main .o_main_content .o_control_panel .btn-group > .
 .tooltip-inner {
   box-shadow: unset !important;
   font-size: 1.1rem;
-  font-family: "Open Sans", "Helvetica", "Verdana", "Arial", sans-serif;
+  font-family: $main-font;
 }

@@ -8,7 +8,7 @@
     'category': 'Theme/Backend',
     'sequence': 1000,
     'summary': """Salesfork Layout""",
-    'depends': ['base', 'web', 'mail', 'web_tour'],
+    'depends': ['base', 'web', 'mail', 'web_tour', 'web_responsive'],
     'data': [
         'security/ir.model.access.csv',
         'views/assets.xml',

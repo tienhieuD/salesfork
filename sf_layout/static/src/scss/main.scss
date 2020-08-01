@@ -35,7 +35,8 @@ html {
             border-radius: $main-radius;
             .o_searchview_input_container {
               .o_searchview_facet {
-                border-radius: $main-radius/1.5;
+                border-radius: $main-radius / 3;
+                overflow: hidden;
               }
             }
           }
@@ -45,6 +46,7 @@ html {
             color: #454545;
             text-transform: uppercase;
             font-size:0.9rem;
+            font-weight: normal;
           }
         }
 
