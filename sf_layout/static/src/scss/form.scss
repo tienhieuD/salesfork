@@ -171,6 +171,7 @@
 
     .o_chatter_header_container {
       padding-top: unset !important;
+
       .o_chatter_topbar {
         margin-top: unset;
         border-bottom: 1px solid #eee;
@@ -259,6 +260,10 @@ $field-border-color: #ddd;
 .o_form_view.o_form_readonly {
   .o_group:not(.oe_subtotal_footer) {
     .o_td_label + td {
+      a.o_form_uri.o_field_widget.o_readonly_modifier {
+        display: block;
+      }
+
       > :not(.o_field_x2many_list):not(.o_field_boolean):nth-child(1) {
         border-bottom: 1px solid $field-border-color;
         display: flex;
@@ -285,6 +290,20 @@ $field-border-color: #ddd;
   .o_field_text.o_field_widget.o_field_empty:not(.o_invisible_modifier):not(.o_readonly_modifier) {
     min-height: 20px;
     border-bottom: 1px solid $field-border-color;
+    display: inline-block !important;
+  }
+
+}
+
+.o_form_view {
+  .o_group.o_inner_group.oe_subtotal_footer {
+    td[colspan="2"] {
+      display: none;
+    }
+  }
+
+  .o_group.o_inner_group.oe_subtotal_footer .oe_subtotal_footer_separator {
+    border-top: unset;
   }
 }
 
