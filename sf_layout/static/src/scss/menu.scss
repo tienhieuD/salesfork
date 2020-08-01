@@ -1,0 +1,234 @@
+.o_menu_apps {
+  .search-container {
+    visibility: hidden;
+  }
+
+  .dropdown-menu.show {
+    //background-image: url("/sf_layout/static/src/img/bg.png");
+    //background-size: 100%;
+    //background-position: top center;
+    //background-repeat: no-repeat;
+    //background-color: $main-bg;
+
+    .dropdown-item {
+      padding-left: 10px;
+      border-bottom: 1px dashed #eee;
+      //.sf_app_menu_icon {
+      //  width: 24px;
+      //  height: 24px;
+      //  margin-right: 8px;
+      //}
+    }
+
+    .dropdown-item.active,
+    .dropdown-item:active,
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      background-color: rgba(222, 226, 230, 0.5);
+    }
+  }
+}
+
+.o_main_navbar > ul > li > a.sf-caret {
+  padding-right: 18px;
+}
+
+.dropdown-toggle.o-no-caret.sf-caret::after {
+  content: "\f107";
+  font: normal normal normal 1.25em/1 FontAwesome;
+  border: unset;
+  vertical-align: -0.05em;
+  margin-left: 0.12em;
+}
+
+.sf_app_menu {
+  .sf_menu_content {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    background: white;
+    //border-right: 1px solid #eee;
+    box-shadow: $shadow-light;
+    left: -240px;
+    top: 3px;
+    z-index: 1000;
+    width: 240px;
+    height: 100%;
+    transition: 100ms;
+
+
+    &.open {
+      left: 0;
+
+      .sf_menu_overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        z-index: -1;
+      }
+    }
+
+
+    .sf_menu_header {
+      display: flex;
+      height: 46px;
+      padding: 0 12px;
+      border-bottom: 1px solid #eee;
+      flex: 0 0 auto;
+
+      .sf_close_menu {
+        font-size: 1.45em;
+        padding: 0 18px;
+        color: #333;
+        height: 46px;
+        display: inline-block;
+        line-height: 46px;
+      }
+
+      .sf_logo {
+        padding: 3px;
+
+        img {
+          display: none;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: left;
+        }
+      }
+    }
+
+    .sf_menu_list {
+      flex: 1 1 auto;
+      overflow: hidden;
+
+      &:hover {
+        overflow: auto;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .sf_menu_group {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 12px;
+        padding-top: 12px;
+
+        &:last-child {
+          border-bottom: unset;
+        }
+
+        h3 {
+          text-transform: uppercase;
+          font-weight: 500;
+          padding: 4px 28px;
+          font-size: 1.3rem;
+          color: #666;
+          display: none;
+        }
+
+        .sf_menu_item {
+          display: block;
+          color: #333;
+          padding: 8px 28px;
+          font-size: 1.1rem;
+          transition: 200ms;
+          white-space: nowrap;
+
+          &:hover {
+            background: #eee;
+          }
+
+          &.active {
+            background: #ddd;
+          }
+
+          .sf_app_menu_icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+          }
+
+          .sf_app_name {
+            display: inline;
+          }
+        }
+      }
+    }
+
+    .sf_menu_footer {
+      flex: 0 0 auto;
+      text-align: center;
+      border-top: 1px solid #eee;
+
+      .sf_pending_menu {
+        padding: 10px;
+        display: inline-block;
+        font-size: 1.25rem;
+        text-align: center;
+        color: #666;
+      }
+    }
+  }
+}
+
+.o_main_content.minimized
+{
+  margin-left: 70px !important;
+}
+.o_action_manager.minimized {
+  margin-left: 56px;
+}
+
+.o_main_navbar.minimized {
+  padding-left: 0 !important;
+}
+
+.sf_app_menu.minimized {
+  .sf_menu_content {
+    top: 51px;
+    width: 56px;
+    height: calc(100% - 51px);
+    z-index: 1;
+
+    &.open {
+      .sf_menu_overlay {
+        display: none;
+      }
+    }
+
+    .sf_menu_header {
+      display: none;
+    }
+
+    .sf_menu_list {
+
+      .sf_menu_group {
+
+        h3 {
+          display: none;
+        }
+
+        .sf_menu_item {
+          padding: 8px 12px;
+
+          &:hover {
+          }
+
+          .sf_app_menu_icon {
+            width: 32px;
+            height: 32px;
+            margin-right: 0;
+          }
+
+          .sf_app_name {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

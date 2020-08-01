@@ -1,0 +1,76 @@
+// LIST VIEW
+// border o2m line in form
+.o_form_view .o_field_widget .o_list_view {
+  border: 1px solid #ddd;
+}
+
+// skip border for hr skill employee in form
+.o_form_view .o_hr_skills_group .o_field_widget .o_list_view {
+  border: unset;
+  tbody tr.o_data_row:hover {
+    background-color: unset;
+    box-shadow: unset;
+  }
+}
+
+.o_view_controller .table-responsive .o_list_view {
+    tfoot, thead {
+        z-index: 3;
+    }
+}
+
+.o_list_view {
+  thead {
+    background-color: #fafaf9;
+    text-transform: uppercase;
+    font-size: 1rem;
+
+    tr {
+      th {
+        border-left: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding: $table-cell-padding; // 1rem
+        border-top-color: transparent;
+        //text-align: left !important;
+        vertical-align: top;
+
+        &.o_list_record_selector {
+          width: 46px;
+          text-align: center !important;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-of-type(2n+1) {
+        background-color: unset;
+      }
+
+      &.o_data_row:hover {
+        background-color: #FFF;
+        box-shadow: $shadow-light;
+      }
+
+      &.o_group_header {
+        background-image: linear-gradient(to bottom, #eee, #eee) !important;
+        th, td {
+          border-bottom: 1px solid #ddd;
+        }
+      }
+
+      td {
+        padding: $table-cell-padding;
+
+        &.o_list_record_selector {
+          text-align: center;
+        }
+      }
+    }
+
+
+  }
+}
+
+// END - LIST VIEW

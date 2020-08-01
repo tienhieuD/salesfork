@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <template id="_assets_primary_variables" inherit_id="web._assets_primary_variables">
+            <xpath expr="//link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/primary_variables.scss"/>
+            </xpath>
+        </template>
+
+        <template id="_assets_secondary_variables" inherit_id="web._assets_secondary_variables">
+            <xpath expr="//link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/secondary_variables.scss"/>
+            </xpath>
+        </template>
+
         <template id="assets_backend" inherit_id="web.assets_backend">
             <xpath expr="//link[last()]" position="after">
-                <link rel="stylesheet" type="text/css" href="/sf_layout/static/src/scss/header.css"/>
-                <link rel="stylesheet" type="text/css" href="/sf_layout/static/src/scss/main.css"/>
-                <link rel="stylesheet" type="text/css" href="/sf_layout/static/src/scss/button.css"/>
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/variables.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/font.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/common.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/header.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/menu.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/main.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/list.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/form.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/form_fields.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/sf_layout/static/src/scss/loading.scss"/>
             </xpath>
-            <!-- <xpath expr="//script[last()]" position="after">
-                <script type="text/javascript" src="/nis_views/static/src/js/effort_view.js"/>
-            </xpath> -->
+            <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript" src="/sf_layout/static/src/js/chatter.js"/>
+                <script type="text/javascript" src="/sf_layout/static/src/js/menu.js"/>
+                <script type="text/javascript" src="/sf_layout/static/src/js/tip.js"/>
+            </xpath>
         </template>
     </data>
 </odoo>

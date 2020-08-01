@@ -1,0 +1,67 @@
+.btn,
+.o_input,
+.dropdown-menu {
+  border-radius: $main-radius;
+}
+
+.o_form_view {
+  .oe_button_box {
+    .oe_stat_button {
+      .o_button_icon {
+        color: $o-community-color;
+      }
+    }
+  }
+}
+
+.o_field_widget {
+  &.o_field_many2one .o_external_button {
+    color: $o-community-color;
+  }
+}
+
+.o_required_modifier {
+  &.o_input, .o_input {
+    background-color: $required-color !important;
+  }
+}
+
+.btn {
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: $o-community-color;
+}
+
+.btn i.fa {
+  margin-right: 4px;
+}
+//.btn-group > .btn:active,
+//.btn-group > .btn.active {
+//  z-index: unset;
+//}
+html body.o_web_client > .o_main .o_main_content .o_control_panel .btn-group > .btn.btn-primary {
+  color: white;
+}
+
+.btn-secondary {
+  color: $o-community-color;
+  border: unset;
+  background: transparent;
+  font-weight: 600;
+}
+
+.sf_line {
+    position: fixed;
+    width: 100%;
+    height: 1px;
+    background: #FFF;
+    top: 52px;
+}
+
+.tooltip-inner {
+  box-shadow: unset !important;
+  font-size: 1.1rem;
+  font-family: "Open Sans", "Helvetica", "Verdana", "Arial", sans-serif;
+}

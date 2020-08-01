@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ir_ui_menu_root_list_tree" model="ir.ui.view">
+            <field name="name">ir_ui_menu_root_list_tree</field>
+            <field name="model">ir.ui.menu</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" create="false">
+                    <field name="sequence" widget="handle"/>
+                    <field name="complete_name"/>
+                    <field name="x_menu_category_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="ir_ui_menu_root_list_act" model="ir.actions.act_window">
+            <field name="name">Menus</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ir.ui.menu</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('parent_id', '=', False)]</field>
+            <field name="view_id" ref="ir_ui_menu_root_list_tree"/>
+        </record>
+
+
+        <record id="x_menu_category_tree" model="ir.ui.view">
+            <field name="name">x.menu.category.tree</field>
+            <field name="model">x.menu.category</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="x_menu_category_act" model="ir.actions.act_window">
+            <field name="name">Menu Category</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">x.menu.category</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

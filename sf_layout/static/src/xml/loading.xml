@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <header t-extend="Throbber">
+        <t t-jquery=".oe_blockui_spin" t-operation="replace">
+            <div class="lds-ripple">
+                <div> </div>
+                <div> </div>
+            </div>
+        </t>
+    </header>
+</templates>
