@@ -8,6 +8,7 @@
   .oe_button_box {
     margin-left: -42px;
     margin-right: -42px;
+    box-shadow: inset 0 -1px 0 #eee;
     .oe_stat_button {
       .o_button_icon {
         color: $o-community-color;
@@ -19,6 +20,10 @@
 .o_field_widget {
   &.o_field_many2one .o_external_button {
     color: $o-community-color;
+    font-size: 1.2rem;
+    background-color: unset;
+    margin: 0;
+    padding: 0 6px !important;
   }
 }
 
@@ -99,4 +104,8 @@ html body.o_web_client > .o_main .o_main_content .o_control_panel .btn-group > .
 }
 .custom-control.custom-checkbox .custom-control-input:not(:checked):not(:indeterminate) ~ .custom-control-label:before {
     outline:none;
+}
+
+.modal.o_technical_modal .modal-content {
+    border-radius: 6px;
 }

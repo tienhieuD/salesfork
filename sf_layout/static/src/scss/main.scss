@@ -53,6 +53,7 @@ html {
                             color: rgb(85, 85, 85);
                             font-size: 1.1rem;
                             position: relative;
+                            text-transform: unset;
                         }
                     }
                 }
@@ -139,7 +140,8 @@ html {
           .o_searchview {
             border-radius: $main-radius;
             margin-top: 6px;
-            padding: 1px 25px 1px 2px;
+            padding: 1px 25px 2px 2px;
+            border-bottom: 1px solid #ddd;
             .o_searchview_more {
                 color: #999;
             }
@@ -177,7 +179,6 @@ html {
             font-size: 0.85rem;
             font-weight: normal;
                 padding: 6px 8px;
-                text-transform: uppercase;
                 margin: 0 2px;
           }
         }

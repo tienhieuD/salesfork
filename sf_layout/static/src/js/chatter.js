@@ -31,7 +31,7 @@ odoo.define('sf_layout.chatter', function (require) {
                 return $statusbar;
 
             var chatter_state = localStorage.getItem('x_chatter_state') || 'open';
-            var $hide_chatter_btn = $('<button>', {class: 'btn btn-link hide_chatter_btn', html: '<i class="fa ' + icon[chatter_state] + '"></i>'});
+            var $hide_chatter_btn = $('<button>', {class: 'btn btn-link hide_chatter_btn', html: '<i class="fa ' + "fa-window-restore" + '"></i>'});
             $hide_chatter_btn
                 .on('click', this.x_click_hide_chatter_btn.bind(this))
                 .appendTo($statusbar);
