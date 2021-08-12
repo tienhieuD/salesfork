@@ -1,6 +1,8 @@
 .o_kanban_view {
   .o_kanban_record {
-    border: 0;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(221, 221, 221) !important;
+    border-radius: 4px;
+    /* box-shadow: 1px 1px 4px rgb(0 0 0 / 20%); */
+    margin-bottom: 4px;
   }
 }

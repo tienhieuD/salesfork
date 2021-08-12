@@ -28,7 +28,7 @@
     tr {
       th {
         border-left: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid transparent;
         padding: $table-cell-padding; // 1rem
         border-top-color: transparent;
         //text-align: left !important;
@@ -51,6 +51,10 @@
       &.o_data_row:hover {
         background-color: #FFF;
         box-shadow: $shadow-light;
+      }
+
+      &:focus-within {
+        background-color: transparent !important;
       }
 
       &.o_group_header {

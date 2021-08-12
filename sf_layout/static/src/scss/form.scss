@@ -32,11 +32,11 @@
 .o_form_view {
   .o_form_statusbar {
     //background-color: unset;
-    border-bottom: unset;
+    border-bottom: 1px solid #EEE;
     z-index: 1;
     position: sticky;
     top: 0;
-    box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.1);
+    //box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.1);
 
     .hide_chatter_btn {
       position: absolute;

@@ -29,11 +29,17 @@
 }
 
 .btn {
-  text-transform: uppercase;
+  text-transform: normal;
 }
 
 .btn-primary {
   background: $o-community-color;
+    background-image: linear-gradient(to right, #007bff , $o-community-color);
+    border: transparent;
+    padding: 6px 24px;
+    border-radius: 3px;
+    transition: 0.5s;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn i.fa {
@@ -65,8 +71,11 @@ html body.o_web_client > .o_main .o_main_content .o_control_panel .btn-group > .
 .btn-secondary {
   color: $o-community-color;
   border: unset;
-  background: transparent;
+    background-color: #EEE;
   font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 3px;
+    color: #555;
 }
 
 .sf_line {
@@ -81,4 +90,13 @@ html body.o_web_client > .o_main .o_main_content .o_control_panel .btn-group > .
   box-shadow: unset !important;
   font-size: 1.1rem;
   font-family: $main-font;
+}
+
+.custom-control-label::before,
+.custom-control-label::after {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.custom-control.custom-checkbox .custom-control-input:not(:checked):not(:indeterminate) ~ .custom-control-label:before {
+    outline:none;
 }
